@@ -13,7 +13,7 @@ assets = { directory = ".", binding = "ASSETS", run_worker_first = true }
 # 把输出中的 id 粘到下面，再部署；已有数据的命名空间 id 不要改动。
 [[kv_namespaces]]
 binding = "NAV"
-id = "粘贴 wrangler kv namespace create NAV 返回的 id"
+id = "1b969b2a42d04ec58bfe06b51eb35139"
 
 # 忘记密码时临时改为 "true"，在主页重新设置密码后改回 "false"（对应 api.php 的 PASSWORD_RESET）。
 [vars]
