@@ -2,7 +2,7 @@
 # 部署命令：npx wrangler deploy
 
 # 名称须与 Cloudflare 上的应用名一致（Connect to Git 创建的应用名为 home_nas），否则 CI 会警告并强行覆盖。
-name = 'home-nas'
+name = "home-nas"
 main = "workers/worker.js"
 compatibility_date = "2026-10-20"
 
