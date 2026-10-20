@@ -5,5 +5,7 @@ config.php
 storage
 workers
 wrangler.toml
+img/uploads
+.wrangler
 *.md
 .git*

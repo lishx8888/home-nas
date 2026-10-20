@@ -1,7 +1,8 @@
 # Cloudflare Workers 部署配置（详细步骤见 Cloudflare部署说明.md）
 # 部署命令：npx wrangler deploy
 
-name = "home-nav"
+# 名称须与 Cloudflare 上的应用名一致（Connect to Git 创建的应用名为 home-nas），否则 CI 会警告并强行覆盖。
+name = "home-nas"
 main = "workers/worker.js"
 compatibility_date = "2026-10-20"
 
@@ -9,8 +10,8 @@ compatibility_date = "2026-10-20"
 # /api.php 走 KV 接口，其余路径回退到静态资源。不要公开的文件用 .assetsignore 排除。
 assets = { directory = ".", binding = "ASSETS", run_worker_first = true }
 
-# KV 存储命名空间：先执行 npx wrangler kv namespace create NAV
-# 把输出中的 id 粘到下面，再部署；已有数据的命名空间 id 不要改动。
+# KV 存储命名空间：在 CF 网页（Workers & Pages → KV → Create namespace）或
+# npx wrangler kv namespace create NAV 创建后，把其 id 粘到下面再推送部署；已有数据的 id 不要改动。
 [[kv_namespaces]]
 binding = "NAV"
 id = "1b969b2a42d04ec58bfe06b51eb35139"
