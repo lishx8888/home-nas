@@ -1,0 +1,151 @@
+/* 与之前一样，略作精简 */
+:root {
+  --bg: #f8fafc;
+  --text: #333;
+  --card: #fff0;
+  --border: #d0d0d0;
+  --primary: #6366f1;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #0f172a; --text: #e2e8f0; --card: #1e293b; --border: #334155; }
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", sans-serif;
+  background-color: var(--bg);
+  background-image: url('https://www.transparenttextures.com/patterns/skulls.png');
+  background-repeat: repeat;
+  background-position: center;
+  color: var(--text);
+  min-height: 100vh; padding: 2rem 1rem;
+  display: flex; flex-direction: column; align-items: center;
+}
+header { text-align:center; margin-bottom: 3rem; }
+h1 { font-size: 2.8rem; font-weight: 800;
+     background: linear-gradient(90deg, #6366f1, #a855f7);
+     -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.subtitle { color: #94a3b8; font-size: 1.1rem; }
+
+.search { max-width: 600px; width: 100%; margin: 2rem 0; }
+.search input {
+  width: 100%; padding: 16px 20px; font-size: 1.1rem;
+  border: 2px solid var(--border); border-radius: 12px;
+  background: var(--card); color: var(--text); outline: none;
+}
+.search input:focus { border-color: var(--primary); box-shadow: 0 0 0 5px rgba(99,102,241,.15); }
+
+main { max-width: 1200px; width: 100%;
+       display: grid; gap: 2rem;
+       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+section {
+  background: #fff0;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.8rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.27);
+}
+h2 {
+  font-size: 1.4rem; margin-bottom: 1.2rem; padding-bottom: 8px;
+  border-bottom: 3px solid var(--primary); display: inline-block;
+}
+ul { list-style: none; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
+li { margin: 0; }
+a {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 12px; border-radius: 10px;
+  text-decoration: none; color: var(--text);
+  transition: all .2s;
+}
+a:hover { background: rgba(99,102,241,.12); transform: translateX(4px); }
+a img { width: 24px; height: 24px; border-radius: 6px; }
+.loading { text-align: center; color: #94a3b8; font-size: 1.2rem; grid-column: 1/-1; }
+
+.page-foot { margin-top: 2.5rem; color: #94a3b8; font-size: .8rem; text-align: center; }
+
+/* 主页管理：浏览时沿用原布局，编辑控件只在登录后显示。 */
+[hidden] { display: none !important; }
+button, input, select { font: inherit; }
+button {
+  border: 1px solid var(--border); border-radius: 8px; padding: 8px 12px;
+  background: var(--bg); color: var(--text); cursor: pointer;
+}
+button:hover { border-color: var(--primary); }
+button:disabled { opacity: .45; cursor: default; }
+button:focus-visible, select:focus-visible, a:focus-visible { outline: 3px solid var(--primary); outline-offset: 3px; }
+button.primary { background: #5145cd; border-color: #5145cd; color: white; }
+button.danger { background: #b91c1c; border-color: #b91c1c; color: white; }
+.danger-text { color: #b91c1c; }
+.page-header { position: relative; width: 100%; max-width: 1200px; margin-bottom: 0; }
+.page-header .search { margin: 2rem auto; }
+.manage-button { position: absolute; top: 50%; right: 0; transform: translateY(-50%); background: var(--bg); opacity: 0; transition: opacity .25s ease; }
+.manage-button:hover, .manage-button:focus-visible { opacity: 1; }
+main { grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); }
+.category-heading { display: flex; align-items: flex-start; gap: 10px; justify-content: space-between; }
+.category-heading h2 { overflow-wrap: break-word; }
+.site-item, .site-link { min-width: 0; }
+.editing .site-link span { overflow-wrap: anywhere; }
+.site-link img { flex: 0 0 24px; object-fit: contain; }
+.editor-bar {
+  position: sticky; top: 8px; z-index: 5; width: 100%; max-width: 1200px;
+  padding: 14px 18px; margin-bottom: 24px; display: flex; flex-wrap: wrap; align-items: center;
+  justify-content: space-between; gap: 12px; background: var(--bg);
+  border: 1px solid var(--border); border-radius: 12px; box-shadow: 0 4px 18px #0002;
+}
+.editor-bar strong { margin-right: 12px; }
+#saveState { font-size: .85rem; color: var(--text); }
+#saveState.unsaved { color: #a65d00; }
+.toolbar-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.small-button { padding: 4px 7px; font-size: .78rem; white-space: nowrap; }
+.drag-handle { cursor: grab; touch-action: auto; font-size: 1rem; }
+.category-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; }
+.editing .category-heading { flex-direction: column; margin-bottom: 18px; }
+.editing h2 { margin-bottom: 0; }
+.editing .site-list { grid-template-columns: 1fr; gap: 8px; }
+.editing .site-item { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; padding: 5px 0; border-bottom: 1px dashed var(--border); }
+.editing .site-link { flex: 1; padding: 7px 5px; gap: 8px; }
+.editing .site-link:hover { transform: none; }
+.site-tools { display: flex; gap: 3px; margin-left: auto; }
+.add-site { width: 100%; border-style: dashed; margin-top: 16px; color: var(--primary); }
+.drop-target { outline: 2px dashed var(--primary); outline-offset: 3px; }
+.page-message { width: 100%; max-width: 1200px; background: var(--bg); border: 1px solid var(--border); border-left: 4px solid #16a34a; border-radius: 8px; padding: 12px 16px; margin-bottom: 18px; }
+.page-message.error { border-left-color: #dc2626; }
+.muted { color: var(--text); opacity: .72; font-size: .85rem; line-height: 1.6; }
+.empty-note { padding: 8px 0; }
+dialog { margin: auto; padding: 0; width: min(500px, calc(100% - 28px)); max-height: calc(100dvh - 32px); border: 1px solid var(--border); border-radius: 16px; background: var(--bg); color: var(--text); box-shadow: 0 20px 70px #0004; }
+dialog::backdrop { background: #0f172a80; }
+.dialog-form { padding: 24px; display: flex; flex-direction: column; gap: 16px; text-align: left; }
+.dialog-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.dialog-heading h2 { margin: 0; border: none; padding: 0; font-size: 1.25rem; }
+.dialog-heading button { font-size: 1.2rem; padding: 3px 10px; }
+.dialog-form label { display: flex; flex-direction: column; gap: 7px; font-size: .9rem; }
+.dialog-form input, .dialog-form select { width: 100%; min-width: 0; border: 1px solid var(--border); border-radius: 8px; padding: 10px; background: var(--bg); color: var(--text); }
+.dialog-form input:focus, .dialog-form select:focus { outline: 2px solid var(--primary); outline-offset: 1px; }
+.dialog-actions { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; padding-top: 6px; }
+.form-error { color: #b91c1c; font-size: .88rem; line-height: 1.5; }
+.form-error:empty { display: none; }
+.icon-controls { display: flex; gap: 16px; align-items: center; }
+.icon-controls img { object-fit: contain; border-radius: 8px; flex-shrink: 0; }
+.grow { flex: 1; min-width: 0; }
+@media (prefers-color-scheme: dark) {
+  .danger-text, .form-error { color: #fca5a5; }
+  #saveState.unsaved { color: #fbbf24; }
+}
+@media (max-width: 850px) {
+  .page-header .search { width: calc(100% - 76px); margin-left: 0; }
+  .editing section { padding: 1.2rem; }
+}
+/* 手机/平板等触屏设备：不提供管理入口，搜索框占满宽度。 */
+@media (hover: none) {
+  .manage-button { display: none; }
+  .page-header .search { width: 100%; margin-left: auto; }
+}
+@media (max-width: 480px) {
+  body { padding: 1rem; }
+  main { gap: 1rem; }
+  section { padding: 1.25rem; }
+  .search input { font-size: .9rem; padding: 14px 12px; }
+  .editor-bar { position: static; padding: 12px; }
+  .editor-bar strong { display: block; margin-bottom: 4px; }
+  .site-tools { width: 100%; justify-content: flex-end; }
+  .dialog-form { padding: 20px; }
+}

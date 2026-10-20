@@ -1,0 +1,10 @@
+[
+  { "name": "GitHub",      "url": "https://github.com",          "icon": "github.png" },
+  { "name": "Gemini",       "url": "https://gemini.google.com/",       "icon": "gemini.svg" },
+  { "name": "文心一言", "url": "https://yiyan.baidu.com/X1",   "icon": "wenxin.png" },
+  { "name": "Grok", "url": "https://grok.com/",   "icon": "grok.png" },
+  { "name": "轻松传", "url": "https://easychuan.cn/",   "icon": "easychuan.png" },
+  { "name": "mthink", "url": "https://mthink.lishx.dpdns.org/",   "icon": "mthink.ico" },
+  { "name": "SegmentFault", "url": "https://segmentfault.com",   "icon": "segmentfault.ico" },
+  { "name": "2wm", "url": "https://2wm.lishx.dpdns.org/",   "icon": "2wm.ico" }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "id": "category-develop",
+    "title": "开发·效率",
+    "sites": [
+      { "id": "site-develop-0", "name": "GitHub", "url": "https://github.com", "icon": "img/icons/github.png" },
+      { "id": "site-develop-1", "name": "Gemini", "url": "https://gemini.google.com/", "icon": "img/icons/gemini.svg" },
+      { "id": "site-develop-2", "name": "文心一言", "url": "https://yiyan.baidu.com/X1", "icon": "img/icons/wenxin.png" },
+      { "id": "site-develop-3", "name": "Grok", "url": "https://grok.com/", "icon": "img/icons/grok.png" },
+      { "id": "site-develop-4", "name": "轻松传", "url": "https://easychuan.cn/", "icon": "img/icons/easychuan.png" },
+      { "id": "site-develop-5", "name": "mthink", "url": "https://mthink.lishx.dpdns.org/", "icon": "img/icons/mthink.ico" },
+      { "id": "site-develop-6", "name": "SegmentFault", "url": "https://segmentfault.com", "icon": "img/icons/segmentfault.ico" },
+      { "id": "site-develop-7", "name": "2wm", "url": "https://2wm.lishx.dpdns.org/", "icon": "img/icons/2wm.ico" }
+    ]
+  },
+  {
+    "id": "category-personal",
+    "title": "我的收藏",
+    "sites": [
+      { "id": "site-personal-0", "name": "HD9901", "url": "https://9901.lishx.top/3399.php", "icon": "img/icons/hd9901.png" },
+      { "id": "site-personal-1", "name": "J4125", "url": "https://4125.lishx.top/", "icon": "img/icons/fnos.ico" },
+      { "id": "site-personal-2", "name": "J1900", "url": "https://1900.lishx.top/", "icon": "img/icons/fnos.ico" },
+      { "id": "site-personal-3", "name": "OEC", "url": "https://oec.lishx.top/oec.php", "icon": "img/icons/oec.png" },
+      { "id": "site-personal-4", "name": "51NB", "url": "https://www.ibmnb.com/", "icon": "img/icons/51nb.ico" },
+      { "id": "site-personal-5", "name": "52破解", "url": "https://www.52pojie.cn/", "icon": "img/icons/52pj.svg" },
+      { "id": "site-personal-6", "name": "博客", "url": "https://9901.lishx.top/blog/", "icon": "img/icons/blog.png" },
+      { "id": "site-personal-7", "name": "图床", "url": "https://pic.lishx.dpdns.org/", "icon": "img/icons/tg.ico" }
+    ]
+  },
+  {
+    "id": "category-entertainment",
+    "title": "娱乐",
+    "sites": [
+      { "id": "site-entertainment-0", "name": "Libretv", "url": "https://libretv.lishx.dpdns.org/", "icon": "img/icons/libretv.png" },
+      { "id": "site-entertainment-1", "name": "Music", "url": "https://mp3.lishx.dpdns.org/", "icon": "img/icons/solara.svg" },
+      { "id": "site-entertainment-2", "name": "Douyin", "url": "https://www.douyin.com/?enter_recommend_method=feed_click&recommend=1", "icon": "img/icons/douyin.png" }
+    ]
+  },
+  {
+    "id": "category-news",
+    "title": "新闻资讯",
+    "sites": [
+      { "id": "site-news-0", "name": "新浪新闻", "url": "https://news.sina.com.cn", "icon": "img/icons/sina.svg" },
+      { "id": "site-news-1", "name": "腾讯新闻", "url": "https://news.qq.com", "icon": "img/icons/tencent.png" }
+    ]
+  },
+  {
+    "id": "category-shopping",
+    "title": "购物",
+    "sites": [
+      { "id": "site-shopping-0", "name": "淘宝", "url": "https://www.taobao.com/", "icon": "img/icons/taobao.png" },
+      { "id": "site-shopping-1", "name": "闲鱼", "url": "https://www.goofish.com/", "icon": "img/icons/goofish.png" },
+      { "id": "site-shopping-2", "name": "京东", "url": "https://www.jd.com/", "icon": "img/icons/jd.ico" },
+      { "id": "site-shopping-3", "name": "阿里", "url": "https://www.1688.com/", "icon": "img/icons/1688.png" }
+    ]
+  },
+  {
+    "id": "category-social",
+    "title": "社交媒体",
+    "sites": [
+      { "id": "site-social-0", "name": "微博", "url": "https://weibo.com", "icon": "img/icons/weibo.ico" },
+      { "id": "site-social-1", "name": "知乎", "url": "https://www.zhihu.com", "icon": "img/icons/zhihu.ico" }
+    ]
+  }
+]

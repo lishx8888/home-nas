@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的导航站</title>
+  <meta name="description" content="我的个人导航站">
+  <link rel="stylesheet" href="css/style.css?v=9">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <header class="page-header">
+    <div class="search">
+      <input type="search" id="searchInput" aria-label="搜索网页" placeholder="回车 百度搜索（Alt+回车 搜Google）" autofocus>
+    </div>
+    <button id="manageButton" class="manage-button" type="button">管理</button>
+  </header>
+  <div id="editorBar" class="editor-bar" hidden>
+    <div><strong>主页编辑</strong><span id="saveState">点击网站旁的编辑按钮即可修改</span></div>
+    <div class="toolbar-actions">
+      <button id="addCategoryButton" type="button">＋ 添加分类</button>
+      <button id="cancelButton" type="button">退出编辑</button>
+      <button id="saveButton" class="primary" type="button" disabled>保存更改</button>
+    </div>
+  </div>
+  <p id="pageMessage" class="page-message" role="status" hidden></p>
+  <main id="links-container" aria-label="网站导航"><div class="loading">加载中...</div></main>
+  <p id="editHint" class="page-foot" hidden>拖动把手调整顺序，或使用移动按钮</p>
+
+  <dialog id="loginDialog" aria-labelledby="loginTitle">
+    <form id="loginForm" class="dialog-form">
+      <div class="dialog-heading"><h2 id="loginTitle">管理员登录</h2><button type="button" data-close aria-label="关闭">×</button></div>
+      <p id="loginHelp" class="muted">登录后，可以直接在主页管理网站和分类。</p>
+      <label><span id="passwordLabel">管理员密码</span><input id="password" type="password" autocomplete="current-password" required maxlength="200"></label>
+      <label id="confirmPasswordField" hidden>再次输入密码<input id="confirmPassword" type="password" autocomplete="new-password" maxlength="200"></label>
+      <p id="loginError" class="form-error" role="alert"></p>
+      <div class="dialog-actions"><button type="button" data-close>取消</button><button id="loginSubmit" type="submit" class="primary">登录并编辑</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="siteDialog" aria-labelledby="siteTitle">
+    <form id="siteForm" class="dialog-form">
+      <div class="dialog-heading"><h2 id="siteTitle">添加网站</h2><button type="button" data-close aria-label="关闭">×</button></div>
+      <label>网站名称<input id="siteName" required maxlength="80" placeholder="例如：GitHub"></label>
+      <label>网站网址<input id="siteUrl" type="text" inputmode="url" required maxlength="2048" placeholder="https://example.com 或 http://{host}:9999/ui"></label>
+      <p class="muted">支持端口和路径；内网服务建议用 {host} 代替主机名，显示时自动替换为当前访问主页的主机名，NAS 换 IP 不用改链接。</p>
+      <label>所属分类<select id="siteCategory" aria-label="所属分类" required></select></label>
+      <div class="icon-controls">
+        <img id="iconPreview" src="img/icons/default.svg" alt="图标预览" width="40" height="40">
+        <label class="grow">网站图标<select id="siteIcon" aria-label="网站图标"></select></label>
+      </div>
+      <label class="upload-label">上传新图标<input id="iconUpload" type="file" accept="image/png,image/jpeg,image/webp,image/gif,image/x-icon,image/vnd.microsoft.icon,.ico,image/svg+xml,.svg"></label>
+      <p class="muted">支持 PNG、JPG、WebP、GIF、ICO、SVG，最大 2 MB。上传后仍需保存主页更改。</p>
+      <p id="siteError" class="form-error" role="alert"></p>
+      <div class="dialog-actions"><button type="button" data-close>取消</button><button id="siteSubmit" type="submit" class="primary">确定</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="categoryDialog" aria-labelledby="categoryTitle">
+    <form id="categoryForm" class="dialog-form">
+      <div class="dialog-heading"><h2 id="categoryTitle">添加分类</h2><button type="button" data-close aria-label="关闭">×</button></div>
+      <label>分类名称<input id="categoryName" required maxlength="60" placeholder="例如：常用工具"></label>
+      <p id="categoryError" class="form-error" role="alert"></p>
+      <div class="dialog-actions"><button type="button" data-close>取消</button><button type="submit" class="primary">确定</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="deleteCategoryDialog" aria-labelledby="deleteCategoryTitle">
+    <form id="deleteCategoryForm" class="dialog-form">
+      <div class="dialog-heading"><h2 id="deleteCategoryTitle">删除分类</h2><button type="button" data-close aria-label="关闭">×</button></div>
+      <p id="deleteCategoryDescription"></p>
+      <label id="moveSitesField">分类内的网站如何处理？<select id="moveSitesTarget" aria-label="分类内的网站如何处理？"></select></label>
+      <div class="dialog-actions"><button type="button" data-close>取消</button><button type="submit" class="danger">删除分类</button></div>
+    </form>
+  </dialog>
+
+  <script src="js/main.js?v=9" defer></script>
+</body>
+</html>

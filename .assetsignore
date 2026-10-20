@@ -1,0 +1,9 @@
+# 以下文件不上传到 Cloudflare（静态资源由 .assetsignore 按 glob 排除）
+# PHP 后端、私有数据、部署文档和本工具配置对访客无意义，也不应公开。
+api.php
+config.php
+storage
+workers
+wrangler.toml
+*.md
+.git*
