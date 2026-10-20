@@ -1,6 +1,0 @@
-[
-  { "name": "淘宝", "url": "https://www.taobao.com/",   "icon": "taobao.png" },
-  { "name": "闲鱼",       "url": "https://www.goofish.com/",       "icon": "goofish.png" },
-  { "name": "京东", "url": "https://www.jd.com/",   "icon": "jd.ico" },
-  { "name": "阿里", "url": "https://www.1688.com/",   "icon": "1688.png" }
-]
